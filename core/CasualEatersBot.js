@@ -17,7 +17,8 @@ const CasualEatersBot = {
       debug: mode
     });
     const bot = controller.spawn({
-      token: config.slack_token
+      token: config.slack_token,
+      retry: config.bot_retries
     });
 
     bot.startRTM((err, bot, payload) => {

@@ -1,6 +1,6 @@
 ## Project setup:
 * clone project and run `npm i`
-* create proper configuration:
+* create proper configuration in config folder. Example of `config.json`:
 ```javascript
 {
   "slack_token": YOUR_SLACK_TOKEN,
