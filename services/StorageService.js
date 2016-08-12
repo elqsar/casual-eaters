@@ -27,14 +27,12 @@ const StorageService = {
     if(data && data.daily_menus) {
       data.daily_menus.forEach((it) => {
         if(it.daily_menu) {
-          IndexationService.indexMenu({
+          const menuToSave = {
             name: restaurantName,
             dishes: it.daily_menu.dishes
-          });
-          store.child(restaurantName).set({
-            name: restaurantName,
-            dishes: it.daily_menu.dishes
-          });
+          };
+          IndexationService.indexMenu(menuToSave);
+          store.child(restaurantName).set(menuToSave);
         }
       });
     }

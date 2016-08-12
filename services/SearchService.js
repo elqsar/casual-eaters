@@ -14,7 +14,9 @@ const SearchService = {
           const reply = result.dishes.map((it) => {
             return `${it.dish.name}:${it.dish.price}`;
           });
-          bot.reply(message, reply.join('\n'));
+          bot.reply(message, `*${result.name}*\n ${reply.join('\n')}`);
+        } else {
+          bot.reply(message, `I wasn\'t able to found any daily menu for ${query}`);
         }
       });
     } else {
